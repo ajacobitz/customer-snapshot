@@ -518,7 +518,7 @@
 //  POWER AUTOMATE SETUP — paste your webhook URL below
 //  See setup instructions provided with this file
 // ─────────────────────────────────────────────────────────────
-const POWER_const POWER_AUTOMATE_URL = 'https://default833941e88e974d0d9a68fac14a02b5.1d.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/468eee79a1f24e87bb565313cf9bc7bd/triggers/manual/paths/invoke?api-version=1';
+const POWER_AUTOMATE_URL = 'https://default833941e88e974d0d9a68fac14a02b5.1d.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/468eee79a1f24e87bb565313cf9bc7bd/triggers/manual/paths/invoke?api-version=1';
 // ─────────────────────────────────────────────────────────────
 
 const FLDS = {
@@ -910,7 +910,8 @@ function dbInsert(payload) {
 }
 function updateBadge() {
   const n = dbLoad().length;
-  document.getElementById('recBadge').textContent = n;
+  const badge = document.getElementById('recBadge');
+  if (badge) badge.textContent = n;
 }
 
 function switchView(v) {
